@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p>Purchase ID: <%= data._id %></p>
+        <p>Purchase Date: <%= data.purchase_date %></p>
+      
+        <p>Item Name: <%= data.item_name %></p>
+        
+        <p>Unit Price: <%= data.unit_price %></p>
+        <form action='/updateprice/<%= data._id %>' method="POST">
+            <input type="number" name="price" required>
+            <input type="submit" value="Update Unit Price">
+        </form>
+        <p>Quantity: <%= data.quantity %></p>
+        <form action='/updatequantity/<%= data._id %>' method="POST">
+            <input type="number" name="quantity" required>
+            <input type="submit" value="Update Quantity">
+        </form>
+        <p>Cost: <%= data.cost %></p>
+        <p>Item Image Link: <%= data.item_image %></p>
+        <a href="<%= data.item_image %>">Download Image</a>
+        <p>Product Specifications: <%= data.prod_spec %></p>
+        <a href="<%= data.prod_spec %>">Download Product Specification</a>
+        
+        <form action='/delete/<%= data._id %>' method="POST">
+            <input type="submit" value="Delete Purchase">
+        </form>
+    </body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p><%= data.msg %></p>
+        <form action="/main" method="POST">
+            <label for="po_id">Purchase ID:</label>
+            <input type="number" name="po_id" value="<%= data.po %>" required>
+            <label for="date">Date Of Purchase:</label>
+            <input type="date" name="date" value="yyyy-mm-dd" required>
+            <label for="item">Item Name:</label>
+            <input type="text" name="item" required>
+            <label for="unit_price">Unit Price:</label>
+            <input type="number" name="unit_price" min=0 required>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" min=0 required>
+
+            <br>
+            <label for="img">Item Image:</label>
+            <input type="file" id="img" name="img" accept="image/*" required>
+            <br>
+
+            <label for="pdf">Product Specification:</label>
+            <input type="file" id="pdf" name="pdf" accept=".pdf" required>
+            <br>
+            <input type="submit" value="Insert">
+        </form>
+        <form action="/check" method="POST">
+            <label for="po_id1">Purchase ID:</label>
+            <input type="number" name="po_id1" value="<%= data.po %>" required>
+            <input type="submit" value="View/Delete/Update">
+
+        </form>
+        <!-- <form action="/po1" method="POST">
+            <label for="poid">Purchase ID:</label>
+            <input type="date" name="poid">
+           
+            <input type="submit" value="Delete">
+        </form>
+        <form action="/po2" method="POST">
+            <label for="poid">Purchase ID:</label>
+            <input type="date" name="poid">
+           
+            <input type="submit" value="Update">
+        </form> -->
+    </body>
+</html>
+
